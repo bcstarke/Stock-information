@@ -10,7 +10,8 @@ def getStock():
 def parsePrice():
     r = requests.get('https://finance.yahoo.com/quote/' + str(getStock()) + '/') 
     soup = bs4.BeautifulSoup(r.text, "xml")
-    currentPrice = soup.find('div',{'class':'My(6px) Pos(r) smartphone_Mt(6px)'}).find('span').text #parses yahoo finance XML for current price information
+    #parses yahoo finance XML for current price information
+    currentPrice = soup.find('div',{'class':'My(6px) Pos(r) smartphone_Mt(6px)'}).find('span').text 
     return currentPrice
 
 while True:
