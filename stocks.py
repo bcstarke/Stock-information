@@ -114,7 +114,7 @@ def main():
 
     # Output current crypto currency markets to the terminal
     print("=== Crypto currency Markets Right Now === ")
-    print(btc.print_bitcoin_price() + '\n' + eth.print_ether_price() + '\n' + rip.print_ripple_price())
+    print(btc.print_bitcoin_price() + '\n' + eth.print_ether_price() + '\n' + rip.print_ripple_price() + '\n')
 
     # Prompt user to enter a ticker
     input_stock = str(input("Enter ticker: ")).upper()
