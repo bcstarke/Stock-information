@@ -112,8 +112,8 @@ def main():
     print("====== US Equity Markets Right Now ===== ")
     print(dow.print_DJIA() + '\n' + sp500.print_SP500() + '\n' + nasdaq.print_nasdaq() + '\n')
 
-    # Output current crypto currency markets to the terminal
-    print("=== Crypto currency Markets Right Now === ")
+    # Output current cryptocurrency markets to the terminal
+    print("=== Cryptocurrency Markets Right Now === ")
     print(btc.print_bitcoin_price() + '\n' + eth.print_ether_price() + '\n' + rip.print_ripple_price() + '\n')
 
     # Prompt user to enter a ticker
