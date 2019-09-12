@@ -4,8 +4,10 @@ from bs4 import BeautifulSoup
 
 # XML code that contains price of stock on yahoo finance
 STOCK_PRICE_WINDOW = 'My(6px) Pos(r) smartphone_Mt(6px)'
+
 # XML code that contains price of crypto on yahoo finance
 CRYPTO_PRICE_WINDOW = 'D(ib) smartphone_Mb(10px) W(70%) W(100%)--mobp smartphone_Mt(6px)'
+
 # All quotes referenced from this URL. Made global to cut down repeat code
 YAHOO_URL = 'https://finance.yahoo.com/quote/'
 
@@ -60,7 +62,8 @@ class Nasdaq:
 
     def print_nasdaq(self):
         return "Nasdaq: " + self.get_nasdaq_price()
-
+    
+# creating cryptocurrency classes
 class Bitcoin:
     def __init__(self):
         self.price = requests.get(YAHOO_URL + 'BTC-USD?p=BTC-USD')
