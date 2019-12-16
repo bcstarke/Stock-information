@@ -1,3 +1,3 @@
 # Stock-information
-Basic Python program which uses beautiful soup to parse yahoo finance XML for stock and cryptocurrency prices.
-Displays the prices to the terminal in a user friendly format. 
+Python program which uses beautiful soup to parse the XML tags from the yahoo finance webpage for stock and cryptocurrency prices.
+Returns and displays up to date prices to the user terminal in a clear format along with other useful market information. 
