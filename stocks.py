@@ -2,10 +2,10 @@ import bs4
 import requests
 from bs4 import BeautifulSoup
 
-# XML code that contains price of stock on yahoo finance
+# HTML code that contains price of stock on yahoo finance
 STOCK_PRICE_WINDOW = 'My(6px) Pos(r) smartphone_Mt(6px)'
 
-# XML code that contains price of crypto on yahoo finance
+# HTML code that contains price of crypto on yahoo finance
 CRYPTO_PRICE_WINDOW = 'D(ib) smartphone_Mb(10px) W(70%) W(100%)--mobp smartphone_Mt(6px)'
 
 # All quotes referenced from this URL. Made global to cut down repeat code
@@ -18,7 +18,7 @@ class Stock:
         self.price = requests.get(YAHOO_URL + str(stock) + '/')
         self.soup = bs4.BeautifulSoup(self.price.text, "xml")
 
-    # parses XML of inputted ticker webpage to return current price.
+    # parses HTML of inputted ticker webpage to return current price.
     # Can accept upper or lower case input
     def parse_price(self, stock):
         stock_price = self.soup.find('div', {'class': STOCK_PRICE_WINDOW}).find('span').text
@@ -30,7 +30,7 @@ class DJIA:
         self.price = requests.get(YAHOO_URL + '%5EDJI?p=^DJI')
         self.soup = bs4.BeautifulSoup(self.price.text, "xml")
 
-    # parses XML of DJIA webpage to return current price.
+    # parses HTML of DJIA webpage to return current price.
     def get_DJIA_price(self):
         dow_price = self.soup.find('div', {'class': STOCK_PRICE_WINDOW}).find('span').text
         return dow_price
